@@ -1,9 +1,9 @@
-#import dash
-#from dash import dcc
-#from dash import html
+import dash
+from dash import dcc
+from dash import html
 import plotly.express as px
 import pandas as pd
-#from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output
  
 #load data
 
