@@ -1,9 +1,9 @@
-import dash
-from dash import dcc
-from dash import html
+#import dash
+#from dash import dcc
+#from dash import html
 import plotly.express as px
 import pandas as pd
-from dash.dependencies import Input, Output
+#from dash.dependencies import Input, Output
  
 #load data
 
@@ -76,9 +76,9 @@ app.layout = html.Div([html.Div([
             'borderRadius': '10px','overflow': 'hidden'}),
     html.Br(),
     
-    html.Div([dcc.Dropdown(['Best team based on Number of Wins','Best team based on Win by Runs',
+    html.Div([dcc.Dropdown(['IPL Champions - Seasonwise','Best team based on Number of Wins','Best team based on Win by Runs',
             'Best Team based on Win by Wickets','Best Player based on Player of the Match','Luckiest Venue for Each Team',
-            'Winning probability by Winning Toss'],'Best team based on Number of Wins',id='Condition',
+            'Winning probability by Winning Toss'],'IPL Champions - Seasonwise',id='Condition',
             style={'textAlign': 'center',"font-weight": "bold",'backgroundColor':'lightcyan'})]),
     html.Br(),
     
@@ -181,6 +181,11 @@ def update_graph(Condition,Season):
       Win_prob.update_layout(margin = dict(t=70, b=20, l=10, r=10))
       Win_prob.update_traces(textinfo="label+percent parent+value",insidetextorientation='radial')
       return Win_prob
+  elif Condition== 'IPL Champions - Seasonwise':
+    Win_prob= px.sunburst(df, path=[],title='IPL Champions - Seasonwise')
+    Win_prob.add_layout_image(dict(source="https://raw.githubusercontent.com/tejasnikumbh999/IPL_Data_Analysis/main/ipl-winners-till-now-2008-2019.jpg",
+      xref="paper", yref="paper",x=0.275, y=1,sizex=4, sizey=1))
+    return Win_prob
     
 if __name__ == '__main__':
     app.run_server(debug='True')
