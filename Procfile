@@ -1,1 +1,1 @@
-web: gunicorn IPL_Analysis:server
+web: gunicorn ipl:server
