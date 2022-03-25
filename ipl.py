@@ -115,7 +115,7 @@ def update_graph(Condition,Season):
       Best_team=px.pie(data_frame=df1,names='winner',title='Best team based on Number of Wins',hole=0.3)
       Best_team.update_traces(textinfo="label+value",textposition='inside')
       Best_team.update_layout(margin=dict(t=70, b=20, l=10, r=10))
-      Best_team.add_layout_image(dict(source="https://raw.githubusercontent.com/tejasnikumbh999/IPL_Analysis/main/Daco_4737816.png",
+      Best_team.add_layout_image(dict(source="https://raw.githubusercontent.com/tejasnikumbh999/IPL_Data_Analysis/main/Daco_4737816.png",
       xref="paper", yref="paper",x=0.532, y=0.387,sizex=0.22, sizey=0.22,xanchor="right", yanchor="bottom"))
       return Best_team
         
