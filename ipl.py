@@ -183,6 +183,8 @@ def update_graph(Condition,Season):
       return Win_prob
   elif Condition== 'IPL Champions - Seasonwise':
     Win_prob= px.sunburst(df, path=[],title='IPL Champions - Seasonwise')
+    Win_prob.update_xaxes(showticklabels=False)
+    Win_prob.update_yaxes(showticklabels=False)
     Win_prob.add_layout_image(dict(source="https://raw.githubusercontent.com/tejasnikumbh999/IPL_Data_Analysis/main/ipl-winners-till-now-2008-2019.jpg",
       xref="paper", yref="paper",x=0.275, y=1,sizex=4, sizey=1))
     return Win_prob
