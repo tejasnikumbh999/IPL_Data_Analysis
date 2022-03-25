@@ -177,7 +177,7 @@ def update_graph(Condition,Season):
       return Win_prob
     else:
       df5 = df[df['season'] == Season]
-      Win_prob= px.sunburst(df5, path=['toss_winner', 'winner'],title='Winning probability by Winning Toss')
+      Win_prob= px.sunburst(df5, path=['toss_winner', 'winner','toss_decision'],title='Winning probability by Winning Toss')
       Win_prob.update_layout(margin = dict(t=70, b=20, l=10, r=10))
       Win_prob.update_traces(textinfo="label+percent parent+value",insidetextorientation='radial')
       return Win_prob
